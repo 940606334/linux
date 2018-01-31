@@ -14,9 +14,16 @@
 	export PATH=$PATH:$JAVA_HOME/bin/:$JRE/bin
 
 	nohup java -jar /root/java/hello.jar >hello.log &
-
+	echo $! > /var/run/Test.pid 
 这就是执行jar包，运行一下，执行这个sh文件，没有问题：可以通过： 
 ps -ef|grep java查询一下进程。
 
 #2.第二步
 输入命令`vi /etc/rc.local` 在最后一行加上那个脚本的绝对路径.
+
+
+备注:停止jar脚本
+
+	 #!/bin/sh 
+	 PID=$(cat /var/run/Test.pid) 
+	 kill -9 $PID
