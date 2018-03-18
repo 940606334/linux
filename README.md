@@ -12,3 +12,5 @@ linux初识
 5.linux后台运行jar
 
 6.Linux自启动jar包
+
+7.nginx的安装与配置
